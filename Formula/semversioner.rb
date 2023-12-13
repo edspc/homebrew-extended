@@ -8,6 +8,12 @@ class Semversioner < Formula
   license "MIT"
   head "https://github.com/raulgomis/semversioner.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/edspc/homebrew-extended/releases/download/semversioner-1.7.0"
+    sha256 cellar: :any_skip_relocation, ventura:      "953d0ca670120d2c82656296767f7dbc41b8c15dca932f89da0895bd4bcfc948"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "48e5f0a626c7d4538853e0663efb31f25372afd29ffa430756dc5077fccf2503"
+  end
+
   depends_on "python@3.12"
 
   resource "click" do
