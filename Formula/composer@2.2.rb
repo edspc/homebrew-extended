@@ -10,6 +10,12 @@ class ComposerAT22 < Formula
     regex(%r{href=.*?/v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)+)/composer\.phar}i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/edspc/extended"
+    sha256 cellar: :any_skip_relocation, ventura:      "744613801c6693dad3e17fa94654366018cce95767501f21f6d1157f0f127112"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fafcb4d23fde1fd93519de6f1b31c18933eb1951449637293ed16f5d1aa11dd0"
+  end
+
   keg_only :versioned_formula
 
   depends_on "php"
