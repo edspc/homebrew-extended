@@ -4,6 +4,7 @@ class ComposerAT22 < Formula
   url "https://getcomposer.org/download/2.2.23/composer.phar"
   sha256 "060ff6b6b8bfb60a943c94954cc4e8bf3e780ff33ecd7c7d9eb2f43241f39740"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://getcomposer.org/download/"
