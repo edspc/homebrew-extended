@@ -6,6 +6,7 @@ class Semversioner < Formula
   url "https://github.com/raulgomis/semversioner/archive/refs/tags/2.0.2.tar.gz"
   sha256 "bd3801d7ba5883d3ff1a7cb23712ead64cef96654f3a6f2766fef21f709c671a"
   license "MIT"
+  revision 1
   head "https://github.com/raulgomis/semversioner.git", branch: "master"
 
   bottle do
