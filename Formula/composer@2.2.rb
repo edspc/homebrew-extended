@@ -13,8 +13,8 @@ class ComposerAT22 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/edspc/extended"
-    sha256 cellar: :any_skip_relocation, ventura:      "744613801c6693dad3e17fa94654366018cce95767501f21f6d1157f0f127112"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fafcb4d23fde1fd93519de6f1b31c18933eb1951449637293ed16f5d1aa11dd0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "abec8f31dc83cc1b49a3f264f54da9c59b34ba0549e3117549cf12d30fe7ff03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ae5878e9e6901188bd23de333db6ea910b0a701073be21e6584f1dc6c94ebef4"
   end
 
   keg_only :versioned_formula
