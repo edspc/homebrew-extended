@@ -9,9 +9,9 @@ class Semversioner < Formula
   head "https://github.com/raulgomis/semversioner.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/edspc/homebrew-extended/releases/download/semversioner-1.7.0"
-    sha256 cellar: :any_skip_relocation, ventura:      "953d0ca670120d2c82656296767f7dbc41b8c15dca932f89da0895bd4bcfc948"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "48e5f0a626c7d4538853e0663efb31f25372afd29ffa430756dc5077fccf2503"
+    root_url "https://ghcr.io/v2/edspc/extended"
+    sha256 cellar: :any_skip_relocation, ventura:      "d0e00b5581d6587858a12fa802420edb99164f65cb5ba749fac7bd9a1c8020d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "679ff29a935e8732f6ee74af8dee6ee81213b6228dab56a890de3c47310f3948"
   end
 
   depends_on "python@3.12"
