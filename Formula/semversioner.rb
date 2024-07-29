@@ -3,8 +3,8 @@ class Semversioner < Formula
 
   desc "Semantic versioning management tool"
   homepage "https://github.com/raulgomis/semversioner"
-  url "https://github.com/raulgomis/semversioner/archive/refs/tags/2.0.3.tar.gz"
-  sha256 "56d95e20db5ddc7a5833c409b7954180aca03d2cea0ee03bbec23829de7b15fc"
+  url "https://github.com/raulgomis/semversioner/archive/refs/tags/2.0.5.tar.gz"
+  sha256 "13da761a06f7f51b2b73239442939d3c40a6a9f435801d30fd29878802021372"
   license "MIT"
   head "https://github.com/raulgomis/semversioner.git", branch: "master"
 
