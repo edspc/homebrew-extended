@@ -16,7 +16,8 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: [ macos-26 ]
+        # xcode-27 is GitHub's macOS 27 image (public preview); switch to macos-27 once that label exists.
+        os: [ macos-26, xcode-27 ]
         include:
           - os: ubuntu-latest
             container:
