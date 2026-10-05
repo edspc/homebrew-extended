@@ -3,37 +3,31 @@ class Semversioner < Formula
 
   desc "Semantic versioning management tool"
   homepage "https://github.com/raulgomis/semversioner"
-  url "https://github.com/raulgomis/semversioner/archive/refs/tags/2.0.8.tar.gz"
-  sha256 "000d9afe9e0bb46364f86bfa9f4849f2007c38654358213cf96d8324728018ba"
+  url "https://files.pythonhosted.org/packages/1a/72/3cfeb2091e2721f96ef7a2d53309388a576e176b6870209c282209acd7ac/semversioner-3.0.3.tar.gz"
+  sha256 "759625e71c24fd60a3c0b8819c8c0e8cdd6602b6d4878cf33f9dd302bf763708"
   license "MIT"
   head "https://github.com/raulgomis/semversioner.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/edspc/extended"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "8e8db25195d25b94269f322e49c4e3deecdfdd42f9adbccb73126a583fdde6f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ff04eb1326c66b070ec433d98645da5520d85b5382ca67b67d6caf1508ad199e"
-  end
-
-  depends_on "python@3.12"
+  depends_on "python@3.14"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   def install
@@ -41,6 +35,8 @@ class Semversioner < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/semversioner --version")
+
     system bin/"semversioner", "add-change", "-t", "minor", "-d", "Initial release"
     system bin/"semversioner", "release"
     assert_match "0.1.0", shell_output("#{bin}/semversioner current-version").strip
