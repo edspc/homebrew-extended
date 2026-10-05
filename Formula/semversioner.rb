@@ -8,6 +8,14 @@ class Semversioner < Formula
   license "MIT"
   head "https://github.com/raulgomis/semversioner.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/edspc/extended"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "333ab8aae6d86371a83c64886b6bb755d12734b3ee625c53d462045a379bbcc5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e242c8817aeaed188e10fb9118b453b46d5d9c13edfc29779655fa2d3c73dd81"
+    sha256 cellar: :any,                 x86_64_linux:      "5719f9ee5deccd8e85ebad746ccfea142e53e7ef9db11a1c5ef68e2b3d5fb600"
+  end
+
   depends_on "python@3.14"
 
   resource "click" do
