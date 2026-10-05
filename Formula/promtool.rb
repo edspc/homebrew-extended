@@ -14,6 +14,13 @@ class Promtool < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/edspc/extended"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "55f99a298d36a06cbbb7ec2ee68334e18aa69c50443630813ce0d48d3cb09f87"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e168ca713460ec7e8806c05116993193a9ded0c8dfb36ed102fea9c742317b1e"
+    sha256 cellar: :any,                 x86_64_linux:      "0163b17164db9312fc6f8fdfc500e9c80db098594f3fba29623c19457459eac6"
+  end
+
   depends_on "go" => :build
 
   conflicts_with "prometheus", because: "both install `promtool`"
