@@ -14,6 +14,13 @@ class Amtool < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/edspc/extended"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cc441fc73c6c33d42ce37ac85d953c8735ca826a8d2e9acfc720c86c0bac6547"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d214974eef4afc27b3fa9fc1f5d1650130400ea25beeb274095b3e05482ce404"
+    sha256 cellar: :any,                 x86_64_linux:      "f511065dfa8c91323b7ca44e71343c0e12293d7ee4854c9a22899424b1e63797"
+  end
+
   depends_on "go" => :build
 
   def fetch
