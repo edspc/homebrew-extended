@@ -28,9 +28,22 @@ class Amtool < Formula
   end
 
   def install
+    # Like upstream's release builds: a detached `HEAD` at the tag's commit,
+    # which `git archive` stores in the header of the GitHub tarball. The build
+    # date is `time`, which Homebrew pins to the source's date for reproducible bottles.
+    if build.head?
+      branch = Utils.git_branch
+      revision = Utils.git_head
+    else
+      branch = "HEAD"
+      revision = Utils::Git.get_tar_commit_id(cached_download)
+    end
     ldflags = %W[
       -X github.com/prometheus/common/version.Version=#{version}
+      -X github.com/prometheus/common/version.Revision=#{revision}
+      -X github.com/prometheus/common/version.Branch=#{branch}
       -X github.com/prometheus/common/version.BuildUser=#{tap.user}
+      -X github.com/prometheus/common/version.BuildDate=#{time.strftime("%Y%m%d-%H:%M:%S")}
     ]
     system "go", "build", *std_go_args(ldflags:, tags: "netgo"), "./cmd/amtool"
 
@@ -39,7 +52,9 @@ class Amtool < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/amtool --version 2>&1")
+    output = shell_output("#{bin}/amtool --version 2>&1")
+    assert_match version.to_s, output
+    assert_match(/revision: \h{40}\)/, output)
 
     (testpath/"alertmanager.yml").write <<~YAML
       route:
