@@ -6,6 +6,13 @@ class BitbucketCustomMcp < Formula
   license "MIT"
   head "https://github.com/edspc/bitbucket-custom-mcp.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/edspc/extended"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0d2842e7b6c4840301fbd3249d085b1d846bd36c679aa6c1b07d363043396f9f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f384dedaa622874cd66457569a15a674a79f0dc314398de089f67c4792bea1c7"
+    sha256 cellar: :any,                 x86_64_linux:      "244f4cede84c25fbbde080361b8e463b1fdcc86d5f12234bb2284889c32a43d0"
+  end
+
   depends_on "go" => :build
 
   def fetch
