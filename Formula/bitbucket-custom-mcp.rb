@@ -8,9 +8,9 @@ class BitbucketCustomMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/edspc/extended"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fd5ca9d4dec13699734e1c0d4ccebf459d602046c99d4e8c2ae8da32701352c0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2042b269a35abea947fa183e9f7413617e52e432c152d36d9e17d7ae15ef6499"
-    sha256 cellar: :any,                 x86_64_linux:      "9350705c2a299fe79568411f9af0688b6080e750ef08873a6e9226245b9db58b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "232a933c3630902243af92276389badee528bda3d9a39f5e17e023b6f7bff7b8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "023ec14644052eabac8b74589348a658ca3e44188f4442ce9609f7b737fbdf65"
+    sha256 cellar: :any,                 x86_64_linux:      "9717eeb349e5ed1c0c4942b13bbc445ced55b668f9197027f740f704ca1bcc46"
   end
 
   depends_on "go" => :build
