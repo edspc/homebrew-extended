@@ -1,8 +1,8 @@
 class Promtool < Formula
   desc "Tooling for the Prometheus monitoring system"
   homepage "https://prometheus.io/docs/prometheus/latest/command-line/promtool/"
-  url "https://github.com/prometheus/prometheus/archive/refs/tags/v3.15.0.tar.gz"
-  sha256 "d6383dea2f9b26c1673a52859c453653f2c6c046f7fb6d01db59603a65a732eb"
+  url "https://github.com/prometheus/prometheus/archive/refs/tags/v3.15.1.tar.gz"
+  sha256 "dc204963713b5fce7aca92292bc3bf69482b088f9d7a6761e60525750c1ddfd2"
   license "Apache-2.0"
   head "https://github.com/prometheus/prometheus.git", branch: "main"
 
