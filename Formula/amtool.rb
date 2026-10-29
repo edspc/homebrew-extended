@@ -16,10 +16,9 @@ class Amtool < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/edspc/extended"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1e381627538e6a81e4d98548f12cc2da6e05af1f83007e4c932bd5d4aeaf9183"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "21a854628101cc7661acc1b13423a9a18d648918aa5ccd3767a6a718419cb7ef"
-    sha256 cellar: :any,                 x86_64_linux:      "9e9f17af56c4e8b2a53ae7ca78ff07631ac21bf1ec15d2eccb973ef66d0b33eb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "06610bd8967ba0d00b0dacf72554247d1227ca464cfabf21fe8257a02a9819d5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8bef21c521f6fa027df3cb13f748b87ffddbadd742d3d5cb7e5b3e7d0193deac"
+    sha256 cellar: :any,                 x86_64_linux:      "60f92c9ff680f5e98c9f6400ab4799a3d4492de9e65c06573748a467bc3a3bc9"
   end
 
   depends_on "go" => :build
