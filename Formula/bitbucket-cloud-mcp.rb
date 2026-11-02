@@ -3,6 +3,13 @@ class BitbucketCloudMcp < Formula
   homepage "https://github.com/edspc/bitbucket-cloud-mcp"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/edspc/extended"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d95454f4184378aeeeb91d81b2089a90214399083c506f65653f09d5ed2dfabf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4f8f0a6ce912bf21def9c746040d20e23c2a483a24fe364e1b7ceac9d2a62207"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d1abaf36350bb32cd2d65337632790f92aa58ae6702bce895cdfdc88be7ca558"
+  end
+
   on_macos do
     on_arm do
       url "https://github.com/edspc/bitbucket-cloud-mcp/releases/download/v0.6.0/bitbucket-cloud-mcp-darwin-arm64"
