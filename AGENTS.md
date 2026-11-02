@@ -41,5 +41,5 @@ cloud certificates and automation identity.
 Use [Add a formula or cask](.agents/skills/add-homebrew-package/SKILL.md) for a new
 package. [Project skills](.agents/skills/README.md) indexes the workflows.
 
-`CLAUDE.md` points here. `.claude/rules` and `.claude/skills` point to the canonical
-`.agents` directories for Claude compatibility.
+`.claude/rules` and `.claude/skills` are compatibility symlinks to the canonical
+`.agents` directories.
