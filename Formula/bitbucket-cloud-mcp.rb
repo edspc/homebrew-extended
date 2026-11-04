@@ -11,6 +11,13 @@ class BitbucketCloudMcp < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/edspc/extended"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "101b5635f2d8b45381ca31b9e5de94023e8a4cee84e3e8776d97dda963242609"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c7c5abc4f59fc87e5456d1c83c0c4e94ad03967aff8092c2605a69a833bd2389"
+    sha256 cellar: :any,                 x86_64_linux:      "f370fc196767ad51707605dbfcb8874a25946a6c1983a7d2310f67837e36c773"
+  end
+
   depends_on "go" => :build
 
   def fetch
