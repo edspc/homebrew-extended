@@ -13,9 +13,11 @@ Since Homebrew 6.0.0, formulae from non-official taps load only after you trust 
 
 ## Bitbucket Cloud MCP
 
-[bitbucket-cloud-mcp](https://github.com/edspc/bitbucket-cloud-mcp) installs the
-upstream GoReleaser binary for macOS or Linux, on ARM64 or x86-64. Go is not
-required to install it.
+[bitbucket-cloud-mcp](https://github.com/edspc/bitbucket-cloud-mcp) installs a
+prebuilt Homebrew bottle on supported macOS and Linux systems, without requiring
+Go. CI builds these bottles from the upstream release's source archive. When no
+compatible bottle is available, Homebrew builds from source and installs Go as a
+build dependency.
 
 ```sh
 brew install edspc/extended/bitbucket-cloud-mcp

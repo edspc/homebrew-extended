@@ -12,8 +12,7 @@ paths:
 
 - Upstream prebuilt executables may be used when that is the chosen distribution
   method. Select the supported OS/CPU artifacts, verify every downloaded SHA-256,
-  and install the command without compiler-only dependencies. The existing
-  `bitbucket-cloud-mcp` formula demonstrates this path.
+  and install the command without compiler-only dependencies.
 - Casks live in `Casks/` and follow the [Cask Cookbook](https://docs.brew.sh/Cask-Cookbook).
   Match artifact stanzas and platform constraints to the actual upstream package.
 - Bottle invalidation and publication are governed by the
