@@ -1,44 +1,24 @@
 class BitbucketCloudMcp < Formula
   desc "MCP server for Bitbucket Cloud"
   homepage "https://github.com/edspc/bitbucket-cloud-mcp"
+  url "https://github.com/edspc/bitbucket-cloud-mcp/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "c242bc06ee94c9acb5a7b5942f18f60a422271401edd751ac2b88798eee5d621"
   license "MIT"
+  head "https://github.com/edspc/bitbucket-cloud-mcp.git", branch: "main"
 
-  bottle do
-    root_url "https://ghcr.io/v2/edspc/extended"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d95454f4184378aeeeb91d81b2089a90214399083c506f65653f09d5ed2dfabf"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4f8f0a6ce912bf21def9c746040d20e23c2a483a24fe364e1b7ceac9d2a62207"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d1abaf36350bb32cd2d65337632790f92aa58ae6702bce895cdfdc88be7ca558"
+  livecheck do
+    url :stable
+    strategy :github_latest
   end
 
-  on_macos do
-    on_arm do
-      url "https://github.com/edspc/bitbucket-cloud-mcp/releases/download/v0.6.0/bitbucket-cloud-mcp-darwin-arm64"
-      sha256 "c1b3790cb21971c647c5cc26839cba0399cf48c832cdf04e135b963062934e4b"
-    end
+  depends_on "go" => :build
 
-    on_intel do
-      url "https://github.com/edspc/bitbucket-cloud-mcp/releases/download/v0.6.0/bitbucket-cloud-mcp-darwin-amd64"
-      sha256 "2425339ee8935c908bb329890d355a84fa6f4fbedfda858ead41d2b32b6486dc"
-    end
-  end
-
-  on_linux do
-    on_arm do
-      url "https://github.com/edspc/bitbucket-cloud-mcp/releases/download/v0.6.0/bitbucket-cloud-mcp-linux-arm64"
-      sha256 "b0cdcb3e4b4cac0e7dcfe9c62d82dbb9ebae9c43e37f608394adf7330e13bfb6"
-    end
-
-    on_intel do
-      url "https://github.com/edspc/bitbucket-cloud-mcp/releases/download/v0.6.0/bitbucket-cloud-mcp-linux-amd64"
-      sha256 "bf9917fc2bb8d81d4726e4b545c013444e04f29f72842b3e4a63e10c504020f0"
-    end
+  def fetch
+    system "go", "mod", "download"
   end
 
   def install
-    os = OS.mac? ? "darwin" : "linux"
-    arch = Hardware::CPU.arm? ? "arm64" : "amd64"
-    bin.install "bitbucket-cloud-mcp-#{os}-#{arch}" => "bitbucket-cloud-mcp"
-    chmod 0755, bin/"bitbucket-cloud-mcp"
+    system "go", "build", *std_go_args, "-buildvcs=false", "./cmd/server"
   end
 
   test do
