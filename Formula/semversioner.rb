@@ -10,10 +10,9 @@ class Semversioner < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/edspc/extended"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "333ab8aae6d86371a83c64886b6bb755d12734b3ee625c53d462045a379bbcc5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e242c8817aeaed188e10fb9118b453b46d5d9c13edfc29779655fa2d3c73dd81"
-    sha256 cellar: :any,                 x86_64_linux:      "5719f9ee5deccd8e85ebad746ccfea142e53e7ef9db11a1c5ef68e2b3d5fb600"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "793bbd41009153671b7599c10069f903283a230291293771b9755e5aea8984bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "329b47ed055e6d82660121af2456204fa172e7556d2bb9e64b36e541dce1e46a"
+    sha256 cellar: :any,                 x86_64_linux:      "91a41759a5b96577899c5ca36bc8caf1058f82e9f5a249cf85c6586cb0fe82fb"
   end
 
   depends_on "python@3.14"
