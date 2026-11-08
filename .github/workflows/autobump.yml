@@ -1,6 +1,7 @@
 name: brew bump
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -26,6 +27,9 @@ jobs:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@d482da0e602890d3160aade42e72c8556103bf04 # 2026.10.26.1
+        with:
+          # brew bump disables the API; Python resource updates need core formulae locally.
+          core: true
 
       - name: Set up git
         id: git_setup
