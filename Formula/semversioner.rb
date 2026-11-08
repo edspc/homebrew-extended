@@ -3,8 +3,8 @@ class Semversioner < Formula
 
   desc "Semantic versioning management tool"
   homepage "https://github.com/raulgomis/semversioner"
-  url "https://files.pythonhosted.org/packages/1a/72/3cfeb2091e2721f96ef7a2d53309388a576e176b6870209c282209acd7ac/semversioner-3.0.3.tar.gz"
-  sha256 "759625e71c24fd60a3c0b8819c8c0e8cdd6602b6d4878cf33f9dd302bf763708"
+  url "https://files.pythonhosted.org/packages/22/6b/bbc7290e276aba022d1d383219d87a57854a7551c898fbae34736e013df3/semversioner-3.1.0.tar.gz"
+  sha256 "d3b620609d38967ac9a0a099226623aef4d5c421c513c5e3c189adb426e21ced"
   license "MIT"
   head "https://github.com/raulgomis/semversioner.git", branch: "master"
 
@@ -19,8 +19,8 @@ class Semversioner < Formula
   depends_on "python@3.14"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
-    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
+    url "https://files.pythonhosted.org/packages/45/37/edbf1b0707709013c0cf2e8317e03d97ed29bf4cac709fe328904ae92a38/click-8.5.1.tar.gz"
+    sha256 "9bbfada76703fd1d784b83eea012e3e8c6a001a876543ef104fa56aaaeb072b4"
   end
 
   resource "jinja2" do
