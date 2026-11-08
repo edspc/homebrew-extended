@@ -16,9 +16,9 @@ class Promtool < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/edspc/extended"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3bd65ee76f4768bbcf6d0417aa03716dccf8d0ea54e9551ffca9468e1be3f198"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f83acbccc858cc0338973435682f7f6755db5fda567ed475f5a2fdfe0519a8f2"
-    sha256 cellar: :any,                 x86_64_linux:      "e09c1ef461f39fb755311ffe45197b5f0ba64b2850fc354320e94de758425431"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b9c0da5cb4b57c427e123edf77da1e8009fe8758541f6adbdde7b16c08655b86"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3deba33129ad28b8267f0e4b8dde2f24517ea7a7484c5167e61e0120c16679a1"
+    sha256 cellar: :any,                 x86_64_linux:      "0a4aff389ba649f045efe00380cf64abbe4ef46014e4294509d94338e12a9975"
   end
 
   depends_on "go" => :build
