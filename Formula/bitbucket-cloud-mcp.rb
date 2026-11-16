@@ -1,8 +1,8 @@
 class BitbucketCloudMcp < Formula
   desc "MCP server for Bitbucket Cloud"
   homepage "https://github.com/edspc/bitbucket-cloud-mcp"
-  url "https://github.com/edspc/bitbucket-cloud-mcp/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "ffaac8924969a9eed78a2d01f440e46146bc3cf9efd18e8e1f4300c4d23f9f69"
+  url "https://github.com/edspc/bitbucket-cloud-mcp/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "73f74f3f93c60d49c4fdba5aa0def8e443c32570236eadfc1977810dc09a21dd"
   license "MIT"
   head "https://github.com/edspc/bitbucket-cloud-mcp.git", branch: "main"
 
