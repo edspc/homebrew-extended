@@ -1,8 +1,8 @@
 class Amtool < Formula
   desc "CLI for the Prometheus Alertmanager"
   homepage "https://github.com/prometheus/alertmanager"
-  url "https://github.com/prometheus/alertmanager/archive/refs/tags/v0.35.0.tar.gz"
-  sha256 "4c4355655ee6d303991fba6e10ca2357978ca9ca0fb47ce925482d685aa34ff7"
+  url "https://github.com/prometheus/alertmanager/archive/refs/tags/v0.35.1.tar.gz"
+  sha256 "6522f9e6966114e8018ac0c2f2f7d9ccdfc955ed1d263af9e38016409419309e"
   license "Apache-2.0"
   head "https://github.com/prometheus/alertmanager.git", branch: "main"
 
